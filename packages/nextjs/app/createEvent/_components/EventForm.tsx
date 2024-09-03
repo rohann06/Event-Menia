@@ -14,8 +14,8 @@ const EventForm = () => {
   };
 
   return (
-    <div className="bg-primary flex flex-col justify-center items-center p-4 md:p-10 lg:p-16 my-8 md:my-16 lg:my-24 max-w-lg md:max-w-2xl lg:max-w-4xl mx-auto rounded-2xl">
-      <p className="text-2xl font-bold mb-6">Create Your Event 🥂</p>
+    <div className="bg-primary flex flex-col justify-center items-center p-2 md:py-10 md:px-16 my-8 md:my-16 lg:my-24 max-w-lg md:max-w-2xl lg:max-w-4xl mx-auto rounded-2xl">
+      <p className="text-2xl font-bold mb-10">Create Your Event 🥂</p>
 
       {/* Event Form */}
       <div className="w-full">
