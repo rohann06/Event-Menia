@@ -1,9 +1,45 @@
 "use client";
 
 import React, { useState } from "react";
+import FirstStep from "./FirstStep";
+import ForthStep from "./ForthStep";
+import SecondStep from "./SecondStep";
+import ThirdStep from "./ThirdStep";
 
 const EventForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
+
+  // const [formData, setFormData] = useState({
+  //   eventTitle: "",
+  //   description: "",
+  //   coverImage: null as File | null,
+  //   eventType: "",
+  //   eventDate: "",
+  //   eventTime: "",
+  //   eventLink: "",
+  //   eventAddress: "",
+  //   ticketPrice: "",
+  //   numberOfTickets: "",
+  //   organizerAddress: "",
+  //   nftOrPoap: "",
+  //   additionalInstructions: "",
+  // });
+
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  //   const { name, value } = e.target;
+  //   setFormData(prev => ({
+  //     ...prev,
+  //     [name]: value,
+  //   }));
+  // };
+
+  // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   const file = e.target.files ? e.target.files[0] : null;
+  //   setFormData(prev => ({
+  //     ...prev,
+  //     coverImage: file,
+  //   }));
+  // };
 
   const goToNextStep = () => {
     if (currentStep < 4) setCurrentStep(currentStep + 1);
@@ -25,7 +61,7 @@ const EventForm = () => {
             <div key={step} className="flex items-center space-x-2">
               <div
                 className={`w-8 h-8 rounded-full ${
-                  step === currentStep ? "bg-accent" : "bg-gray-300"
+                  step === currentStep ? "dark:bg-accent bg-black" : "bg-gray-300"
                 } text-white flex items-center justify-center`}
               >
                 {step}
@@ -36,249 +72,16 @@ const EventForm = () => {
         </div>
 
         {/* Step 1 Form */}
-        {currentStep === 1 && (
-          <div className="mb-8">
-            <form className="space-y-5">
-              {/* Event Title */}
-              <div>
-                <label className="block text-sm font-medium mb-1" htmlFor="eventTitle">
-                  Event Title
-                </label>
-                <input
-                  type="text"
-                  id="eventTitle"
-                  className="w-full rounded-lg p-2"
-                  placeholder="Enter the event title"
-                />
-              </div>
-
-              {/* Event Description */}
-              <div>
-                <label className="block text-sm font-medium mb-1" htmlFor="description">
-                  Description
-                </label>
-                <textarea
-                  id="description"
-                  className="w-full rounded-lg p-2"
-                  rows={4}
-                  placeholder="Enter the event description"
-                />
-              </div>
-
-              {/* Event Cover Image */}
-              <div>
-                <label className="block text-sm font-medium mb-1" htmlFor="coverImage">
-                  Event Cover Image
-                </label>
-                <input type="file" id="coverImage" className="w-full rounded-lg p-2" />
-              </div>
-
-              <div className="flex justify-between">
-                <button
-                  type="button"
-                  className="bg-neutral dark:text-black text-white py-2 px-4 rounded-lg w-full mt-4"
-                  onClick={goToNextStep}
-                >
-                  Next
-                </button>
-              </div>
-            </form>
-          </div>
-        )}
+        {currentStep === 1 && <FirstStep goToNextStep={goToNextStep} />}
 
         {/* Step 2 Form */}
-        {currentStep === 2 && (
-          <div className="mb-8">
-            <form className="space-y-4">
-              {/* Event Type (IRL or Virtual) */}
-              <div className="flex flex-col space-y-2">
-                <label className="block text-sm font-medium mb-1">Event Type</label>
-                <div className="flex items-center space-x-4">
-                  <label className="flex items-center space-x-2">
-                    <input type="radio" name="eventType" value="irl" className="form-radio" />
-                    <span>IRL</span>
-                  </label>
-                  <label className="flex items-center space-x-2">
-                    <input type="radio" name="eventType" value="virtual" className="form-radio" />
-                    <span>Virtual</span>
-                  </label>
-                </div>
-              </div>
-
-              {/* Date and Time */}
-              <div>
-                <label className="block text-sm font-medium mb-1" htmlFor="eventDate">
-                  Date
-                </label>
-                <input type="date" id="eventDate" className="w-full rounded-lg p-2 border border-gray-300" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-1" htmlFor="eventTime">
-                  Time
-                </label>
-                <input type="time" id="eventTime" className="w-full rounded-lg p-2 border border-gray-300" />
-              </div>
-
-              {/* Link for Virtual Event */}
-              <div>
-                <label className="block text-sm font-medium mb-1" htmlFor="eventLink">
-                  Event Link
-                </label>
-                <input
-                  type="url"
-                  id="eventLink"
-                  className="w-full rounded-lg p-2 border border-gray-300"
-                  placeholder="Enter the event link"
-                />
-              </div>
-
-              {/* Address for IRL Event */}
-              <div>
-                <label className="block text-sm font-medium mb-1" htmlFor="eventAddress">
-                  Address
-                </label>
-                <textarea
-                  id="eventAddress"
-                  className="w-full rounded-lg p-2 border border-gray-300"
-                  rows={4}
-                  placeholder="Enter the address"
-                />
-              </div>
-
-              <div className="flex gap-x-10 justify-between">
-                <button
-                  type="button"
-                  className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full mt-4"
-                  onClick={goToPreviousStep}
-                >
-                  Previous
-                </button>
-                <button
-                  type="button"
-                  className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full mt-4"
-                  onClick={goToNextStep}
-                >
-                  Next
-                </button>
-              </div>
-            </form>
-          </div>
-        )}
+        {currentStep === 2 && <SecondStep goToNextStep={goToNextStep} goToPreviousStep={goToPreviousStep} />}
 
         {/* Step 3 Form */}
-        {currentStep === 3 && (
-          <div className="mb-8">
-            <form className="space-y-4">
-              {/* Ticket Price */}
-              <div>
-                <label className="block text-sm font-medium mb-1" htmlFor="ticketPrice">
-                  Ticket Price
-                </label>
-                <input
-                  type="number"
-                  id="ticketPrice"
-                  className="w-full rounded-lg p-2 border border-gray-300"
-                  placeholder="Enter the ticket price"
-                />
-              </div>
-
-              {/* Number of Tickets/Seats */}
-              <div>
-                <label className="block text-sm font-medium mb-1" htmlFor="numberOfTickets">
-                  Number of Tickets/Seats
-                </label>
-                <input
-                  type="number"
-                  id="numberOfTickets"
-                  className="w-full rounded-lg p-2 border border-gray-300"
-                  placeholder="Enter the number of tickets or seats"
-                />
-              </div>
-
-              {/* Organizer's Address */}
-              <div>
-                <label className="block text-sm font-medium mb-1" htmlFor="organizerAddress">
-                  Organizer Address
-                </label>
-                <textarea
-                  id="organizerAddress"
-                  className="w-full rounded-lg p-2 border border-gray-300"
-                  rows={4}
-                  placeholder="Enter the organizer's address"
-                />
-                <p className="text-xs text-red-500 mt-2">
-                  Add the correct address. All collected amounts will be added directly to this address.
-                </p>
-              </div>
-
-              <div className="flex gap-x-10 justify-between">
-                <button
-                  type="button"
-                  className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full mt-4"
-                  onClick={goToPreviousStep}
-                >
-                  Previous
-                </button>
-                <button
-                  type="button"
-                  className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full mt-4"
-                  onClick={goToNextStep}
-                >
-                  Next
-                </button>
-              </div>
-            </form>
-          </div>
-        )}
+        {currentStep === 3 && <ThirdStep goToNextStep={goToNextStep} goToPreviousStep={goToPreviousStep} />}
 
         {/* Step 4 Form */}
-        {currentStep === 4 && (
-          <div className="mb-8">
-            <form className="space-y-4">
-              {/* NFT or POAP */}
-              <div className="flex flex-col space-y-2">
-                <label className="block text-sm font-medium mb-1">NFT or POAP</label>
-                <div className="flex items-center space-x-4">
-                  <label className="flex items-center space-x-2">
-                    <input type="radio" name="nftOrPoap" value="nft" className="form-radio" />
-                    <span>NFT</span>
-                  </label>
-                  <label className="flex items-center space-x-2">
-                    <input type="radio" name="nftOrPoap" value="poap" className="form-radio" />
-                    <span>POAP</span>
-                  </label>
-                </div>
-              </div>
-
-              {/* Additional Instructions */}
-              <div>
-                <label className="block text-sm font-medium mb-1" htmlFor="additionalInstructions">
-                  Additional Instructions
-                </label>
-                <textarea
-                  id="additionalInstructions"
-                  className="w-full rounded-lg p-2 border border-gray-300"
-                  rows={4}
-                  placeholder="Enter any additional instructions or information"
-                />
-              </div>
-
-              {/* Submit Button */}
-              <div className="flex gap-x-10 justify-between">
-                <button
-                  type="button"
-                  className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full mt-4"
-                  onClick={goToPreviousStep}
-                >
-                  Previous
-                </button>
-                <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-lg w-full mt-4">
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
-        )}
+        {currentStep === 4 && <ForthStep goToPreviousStep={goToPreviousStep} />}
       </div>
     </div>
   );
