@@ -6,7 +6,7 @@ import ForthStep from "./ForthStep";
 import SecondStep from "./SecondStep";
 import ThirdStep from "./ThirdStep";
 
-const EventForm = () => {
+const MeetupForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
 
   // const [formData, setFormData] = useState({
@@ -50,8 +50,8 @@ const EventForm = () => {
   };
 
   return (
-    <div className="bg-primary flex flex-col justify-center items-center p-2 md:py-10 md:px-16 my-8 md:my-16 lg:my-24 max-w-lg md:max-w-2xl lg:max-w-4xl mx-auto rounded-2xl">
-      <p className="text-2xl font-bold mb-10">Create Your Event 🥂</p>
+    <div className="bg-primary flex flex-col justify-center items-center p-2 md:py-9 md:px-16 my-8 md:my-10 lg:my-12 max-w-lg md:max-w-2xl lg:max-w-4xl mx-auto rounded-2xl">
+      <p className="text-2xl font-bold mb-10">Create Your Meetup 🥂</p>
 
       {/* Event Form */}
       <div className="w-full">
@@ -87,4 +87,4 @@ const EventForm = () => {
   );
 };
 
-export default EventForm;
+export default MeetupForm;

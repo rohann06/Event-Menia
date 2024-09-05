@@ -1,10 +1,10 @@
 import React from "react";
-import EventForm from "./_components/EventForm";
+import MeetupForm from "./_components/MeetupForm";
 
 const CreateEvent = () => {
   return (
     <div>
-      <EventForm />
+      <MeetupForm />
     </div>
   );
 };

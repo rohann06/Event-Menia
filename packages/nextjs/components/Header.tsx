@@ -19,8 +19,8 @@ export const menuLinks: HeaderMenuLink[] = [
     href: "/",
   },
   {
-    label: "Create Event",
-    href: "/createEvent",
+    label: "Create Meetup",
+    href: "/createMeetup",
   },
   {
     label: "Debug Contracts",
@@ -92,7 +92,7 @@ export const Header = () => {
           )}
         </div>
         <Link href="/" passHref className="hidden lg:flex items-center gap-2 ml-4 mr-8 shrink-0">
-          <p className=" text-[25px] font-extrabold undr">Event Menia 🥂</p>
+          <p className=" text-[25px] font-extrabold undr">Meetups Menia 🥂</p>
         </Link>
 
         <ul className="hidden lg:flex lg:flex-nowrap menu menu-horizontal px-1 gap-2">
