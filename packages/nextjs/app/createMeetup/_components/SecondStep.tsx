@@ -9,17 +9,17 @@ const SecondStep: React.FC<SecondStepProps> = ({ goToNextStep, goToPreviousStep 
   return (
     <div className="mb-8">
       <form className="space-y-4">
-        {/* Event Type (IRL or Virtual) */}
+        {/* meetup Type (IRL or Virtual) */}
         <div className="flex flex-col space-y-2">
-          <label className="block text-sm font-medium mb-1">Event Type</label>
+          <label className="block opacity-45 text-sm font-medium mb-1">meetup Type</label>
           <div className="flex items-center space-x-4">
             <label className="flex items-center space-x-2">
               <input
                 type="radio"
-                name="eventType"
+                name="meetupType"
                 value="irl"
                 className="form-radio"
-                // checked={formData.eventType === "irl"}
+                // checked={formData.meetupType === "irl"}
                 // onChange={handleChange}
               />
               <span>IRL</span>
@@ -27,10 +27,10 @@ const SecondStep: React.FC<SecondStepProps> = ({ goToNextStep, goToPreviousStep 
             <label className="flex items-center space-x-2">
               <input
                 type="radio"
-                name="eventType"
+                name="meetupType"
                 value="virtual"
                 className="form-radio"
-                // checked={formData.eventType === "virtual"}
+                // checked={formData.meetupType === "virtual"}
                 // onChange={handleChange}
               />
               <span>Virtual</span>
@@ -40,60 +40,44 @@ const SecondStep: React.FC<SecondStepProps> = ({ goToNextStep, goToPreviousStep 
 
         {/* Date and Time */}
         <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="eventDate">
-            Date
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="meetupDate">
+            Date *
           </label>
           <input
             type="date"
-            id="eventDate"
-            name="eventDate"
-            className="w-full rounded-full p-2 "
-            // value={formData.eventDate}
+            id="meetupDate"
+            name="meetupDate"
+            className="w-full rounded-full py-2 px-5 "
+            // value={formData.meetupDate}
             // onChange={handleChange}
           />
         </div>
         <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="eventTime">
-            Time
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="meetupTime">
+            Time *
           </label>
           <input
             type="time"
-            id="eventTime"
-            name="eventTime"
-            className="w-full rounded-full p-2 "
-            // value={formData.eventTime}
+            id="meetupTime"
+            name="meetupTime"
+            className="w-full rounded-full py-2 px-5 "
+            // value={formData.meetupTime}
             // onChange={handleChange}
           />
         </div>
 
-        {/* Link for Virtual Event */}
+        {/* Link for Virtual meetup */}
         <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="eventLink">
-            Event Link
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="meetupLink">
+            Meetup Link <span className=" underline font-medium text-[11px]">( IRL? add the google map link )</span> *
           </label>
           <input
             type="url"
-            id="eventLink"
-            name="eventLink"
-            className="w-full rounded-full p-2 "
-            placeholder="Enter the event link"
-            // value={formData.eventLink}
-            // onChange={handleChange}
-          />
-        </div>
-
-        {/* Address for IRL Event */}
-        <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="eventAddress">
-            Address
-          </label>
-          <textarea
-            id="eventAddress"
-            name="eventAddress"
-            className="w-full rounded-lg p-2"
-            rows={4}
-            placeholder="Enter the address"
-            // value={formData.eventAddress}
+            id="meetupLink"
+            name="meetupLink"
+            className="w-full rounded-full py-2 px-5 "
+            placeholder="Enter the meetup link"
+            // value={formData.meetupLink}
             // onChange={handleChange}
           />
         </div>

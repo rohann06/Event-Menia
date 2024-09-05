@@ -4,47 +4,63 @@ const FirstStep = ({ goToNextStep }: { goToNextStep: () => void }) => {
   return (
     <div className="mb-8">
       <form className="space-y-5">
-        {/* Event Title */}
+        {/* meetup organiser */}
         <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="eventTitle">
-            Event Title
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="meetupTitle">
+            Organiser *
           </label>
           <input
             type="text"
-            id="eventTitle"
-            name="eventTitle"
-            className="w-full rounded-full p-2"
-            placeholder="Enter the event title"
-            // value={formData.eventTitle}
+            id="meetupTitle"
+            name="meetupTitle"
+            className="w-full rounded-full py-2 px-5"
+            placeholder="Enter the meetup organiser's name"
+            // value={formData.meetupTitle}
             // onChange={handleChange}
           />
         </div>
 
-        {/* Event Description */}
+        {/* meetup Title */}
         <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="description">
-            Description
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="meetupTitle">
+            Meetup Title *
+          </label>
+          <input
+            type="text"
+            id="meetupTitle"
+            name="meetupTitle"
+            className="w-full rounded-full py-2 px-5"
+            placeholder="Enter the meetup title"
+            // value={formData.meetupTitle}
+            // onChange={handleChange}
+          />
+        </div>
+
+        {/* meetup Description */}
+        <div>
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="description">
+            Description *
           </label>
           <textarea
             id="description"
             name="description"
-            className="w-full rounded-lg p-2"
+            className="w-full rounded-lg py-2 px-5"
             rows={4}
-            placeholder="Enter the event description"
+            placeholder="Enter the meetup description"
             // value={formData.description}
             // onChange={handleChange}
           />
         </div>
 
-        {/* Event Cover Image */}
+        {/* meetup Cover Image */}
         <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="coverImage">
-            Event Cover Image
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="coverImage">
+            Meetup Cover Image *
           </label>
           <input
             type="file"
             id="coverImage"
-            className="w-full rounded-full p-2"
+            className="w-full rounded-full py-2 px-5"
             //    onChange={handleFileChange}
           />
         </div>

@@ -11,15 +11,16 @@ const ThirdStep: React.FC<ThirdStepProps> = ({ goToNextStep, goToPreviousStep })
       <form className="space-y-4">
         {/* Ticket Price */}
         <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="ticketPrice">
-            Ticket Price
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="ticketPrice">
+            Ticket Price ($)*
           </label>
           <input
             type="number"
             id="ticketPrice"
             name="ticketPrice"
-            className="w-full rounded-full p-2"
-            placeholder="Enter ticket price"
+            className="w-full rounded-full py-2 px-5"
+            min={0}
+            placeholder="Enter meetup ticket price"
             // value={formData.ticketPrice}
             // onChange={handleChange}
           />
@@ -27,14 +28,15 @@ const ThirdStep: React.FC<ThirdStepProps> = ({ goToNextStep, goToPreviousStep })
 
         {/* Number of Tickets */}
         <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="numberOfTickets">
-            Number of Tickets
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="numberOfTickets">
+            Number of Tickets *
           </label>
           <input
             type="number"
             id="numberOfTickets"
             name="numberOfTickets"
-            className="w-full rounded-full p-2"
+            min={0}
+            className="w-full rounded-full py-2 px-5"
             placeholder="Enter the number of tickets"
             // value={formData.numberOfTickets}
             // onChange={handleChange}
@@ -43,15 +45,19 @@ const ThirdStep: React.FC<ThirdStepProps> = ({ goToNextStep, goToPreviousStep })
 
         {/* Organizer Address */}
         <div>
-          <label className="block text-sm font-medium mb-1" htmlFor="organizerAddress">
-            Organizer Address
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="organizerAddress">
+            Organizer Address * <br />
+            <span className=" text-[12px] font-light text-yellow-900 dark:text-yellow-600">
+              ⚠️ Please ensure that the correct address is provided, as the ticket amount will be transferred directly
+              to the specified address.
+            </span>
           </label>
           <input
             type="text"
             id="organizerAddress"
             name="organizerAddress"
-            className="w-full rounded-full p-2"
-            placeholder="Enter organizer address"
+            className="w-full rounded-full py-2 px-5"
+            placeholder="Enter organizer's address"
             // value={formData.organizerAddress}
             // onChange={handleChange}
           />
