@@ -77,11 +77,11 @@ const MeetupForm = () => {
         {/* Step 2 Form */}
         {currentStep === 2 && <SecondStep goToNextStep={goToNextStep} goToPreviousStep={goToPreviousStep} />}
 
-        {/* Step 3 Form */}
+        {/* Step 2 Form */}
         {currentStep === 3 && <ThirdStep goToNextStep={goToNextStep} goToPreviousStep={goToPreviousStep} />}
 
-        {/* Step 4 Form */}
-        {currentStep === 4 && <ForthStep goToPreviousStep={goToPreviousStep} />}
+        {/* Step 3 Form */}
+        {currentStep === 4 && <ForthStep goToNextStep={goToNextStep} goToPreviousStep={goToPreviousStep} />}
       </div>
     </div>
   );

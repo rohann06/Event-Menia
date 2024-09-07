@@ -8,77 +8,49 @@ interface SecondStepProps {
 const SecondStep: React.FC<SecondStepProps> = ({ goToNextStep, goToPreviousStep }) => {
   return (
     <div className="mb-8">
-      <form className="space-y-4">
-        {/* meetup Type (IRL or Virtual) */}
-        <div className="flex flex-col space-y-2">
-          <label className="block opacity-45 text-sm font-medium mb-1">meetup Type</label>
-          <div className="flex items-center space-x-4">
-            <label className="flex items-center space-x-2">
-              <input
-                type="radio"
-                name="meetupType"
-                value="irl"
-                className="form-radio"
-                // checked={formData.meetupType === "irl"}
-                // onChange={handleChange}
-              />
-              <span>IRL</span>
-            </label>
-            <label className="flex items-center space-x-2">
-              <input
-                type="radio"
-                name="meetupType"
-                value="virtual"
-                className="form-radio"
-                // checked={formData.meetupType === "virtual"}
-                // onChange={handleChange}
-              />
-              <span>Virtual</span>
-            </label>
-          </div>
-        </div>
-
-        {/* Date and Time */}
+      <form className="space-y-5">
+        {/* meetup Title */}
         <div>
-          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="meetupDate">
-            Date *
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="meetupTitle">
+            Meetup Title *
           </label>
           <input
-            type="date"
-            id="meetupDate"
-            name="meetupDate"
-            className="w-full rounded-full py-2 px-5 "
-            // value={formData.meetupDate}
-            // onChange={handleChange}
-          />
-        </div>
-        <div>
-          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="meetupTime">
-            Time *
-          </label>
-          <input
-            type="time"
-            id="meetupTime"
-            name="meetupTime"
-            className="w-full rounded-full py-2 px-5 "
-            // value={formData.meetupTime}
+            type="text"
+            id="meetupTitle"
+            name="meetupTitle"
+            className="w-full rounded-full py-2 px-5"
+            placeholder="Enter the meetup title"
+            // value={formData.meetupTitle}
             // onChange={handleChange}
           />
         </div>
 
-        {/* Link for Virtual meetup */}
+        {/* meetup Description */}
         <div>
-          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="meetupLink">
-            Meetup Link <span className=" underline font-medium text-[11px]">( IRL? add the google map link )</span> *
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="description">
+            Description *
+          </label>
+          <textarea
+            id="description"
+            name="description"
+            className="w-full rounded-lg py-2 px-5"
+            rows={4}
+            placeholder="Enter the meetup description"
+            // value={formData.description}
+            // onChange={handleChange}
+          />
+        </div>
+
+        {/* meetup Cover Image */}
+        <div>
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="coverImage">
+            Meetup Cover Image *
           </label>
           <input
-            type="url"
-            id="meetupLink"
-            name="meetupLink"
-            className="w-full rounded-full py-2 px-5 "
-            placeholder="Enter the meetup link"
-            // value={formData.meetupLink}
-            // onChange={handleChange}
+            type="file"
+            id="coverImage"
+            className="w-full rounded-full py-2 px-5"
+            //    onChange={handleFileChange}
           />
         </div>
 

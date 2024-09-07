@@ -1,5 +1,7 @@
 import React from "react";
 
+// import { AddressInput } from "~~/components/scaffold-eth";
+
 const FirstStep = ({ goToNextStep }: { goToNextStep: () => void }) => {
   return (
     <div className="mb-8">
@@ -7,7 +9,7 @@ const FirstStep = ({ goToNextStep }: { goToNextStep: () => void }) => {
         {/* meetup organiser */}
         <div>
           <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="meetupTitle">
-            Organiser *
+            Organiser Name *
           </label>
           <input
             type="text"
@@ -23,7 +25,7 @@ const FirstStep = ({ goToNextStep }: { goToNextStep: () => void }) => {
         {/* meetup Title */}
         <div>
           <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="meetupTitle">
-            Meetup Title *
+            Organiser Twitter Handle *
           </label>
           <input
             type="text"
@@ -36,33 +38,20 @@ const FirstStep = ({ goToNextStep }: { goToNextStep: () => void }) => {
           />
         </div>
 
-        {/* meetup Description */}
+        {/* Organizer Address */}
         <div>
-          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="description">
-            Description *
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="organizerAddress">
+            Organizer Address * <br />
+            <span className=" text-[12px] font-light text-yellow-900 dark:text-yellow-600">
+              ⚠️ Please ensure that the correct address is provided, as the ticket amount will be transferred directly
+              to the specified address.
+            </span>
           </label>
-          <textarea
-            id="description"
-            name="description"
-            className="w-full rounded-lg py-2 px-5"
-            rows={4}
-            placeholder="Enter the meetup description"
-            // value={formData.description}
-            // onChange={handleChange}
-          />
-        </div>
-
-        {/* meetup Cover Image */}
-        <div>
-          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="coverImage">
-            Meetup Cover Image *
-          </label>
-          <input
-            type="file"
-            id="coverImage"
-            className="w-full rounded-full py-2 px-5"
-            //    onChange={handleFileChange}
-          />
+          {/* <AddressInput
+            placeholder="Enter organizer's address"
+            value={"rohann06.eth"}
+            onChange={value => setInputAddress(value as AddressType)}
+          /> */}
         </div>
 
         <div className="flex justify-between">

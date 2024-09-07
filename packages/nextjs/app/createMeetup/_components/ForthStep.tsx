@@ -1,10 +1,48 @@
 import React from "react";
 
-const ForthStep = ({ goToPreviousStep }: { goToPreviousStep: () => void }) => {
+interface ForthStepProps {
+  goToNextStep: () => void;
+  goToPreviousStep: () => void;
+}
+
+const ForthStep: React.FC<ForthStepProps> = ({ goToPreviousStep }) => {
   return (
     <div className="mb-8">
       <form className="space-y-4">
-        {/* NFT or POAP */}
+        {/* Ticket Price */}
+        <div>
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="ticketPrice">
+            Ticket Price ($)*
+          </label>
+          <input
+            type="number"
+            id="ticketPrice"
+            name="ticketPrice"
+            className="w-full rounded-full py-2 px-5"
+            min={0}
+            placeholder="Enter meetup ticket price"
+            // value={formData.ticketPrice}
+            // onChange={handleChange}
+          />
+        </div>
+
+        {/* Number of Tickets */}
+        <div>
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="numberOfTickets">
+            Number of Tickets *
+          </label>
+          <input
+            type="number"
+            id="numberOfTickets"
+            name="numberOfTickets"
+            min={0}
+            className="w-full rounded-full py-2 px-5"
+            placeholder="Enter the number of tickets"
+            // value={formData.numberOfTickets}
+            // onChange={handleChange}
+          />
+        </div>
+
         <div className="flex flex-col space-y-2">
           <label className="block opacity-45 text-sm font-medium mb-1">NFT or POAP (optional)</label>
           <div className="flex items-center space-x-4">

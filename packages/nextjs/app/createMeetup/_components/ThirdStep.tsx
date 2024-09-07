@@ -1,64 +1,83 @@
 import React from "react";
 
-interface ThirdStepProps {
+interface thirdStepProps {
   goToNextStep: () => void;
   goToPreviousStep: () => void;
 }
 
-const ThirdStep: React.FC<ThirdStepProps> = ({ goToNextStep, goToPreviousStep }) => {
+const ThirdStep: React.FC<thirdStepProps> = ({ goToNextStep, goToPreviousStep }) => {
   return (
     <div className="mb-8">
       <form className="space-y-4">
-        {/* Ticket Price */}
+        {/* meetup Type (IRL or Virtual) */}
+        <div className="flex flex-col space-y-2">
+          <label className="block opacity-45 text-sm font-medium mb-1">meetup Type</label>
+          <div className="flex items-center space-x-4">
+            <label className="flex items-center space-x-2">
+              <input
+                type="radio"
+                name="meetupType"
+                value="irl"
+                className="form-radio"
+                // checked={formData.meetupType === "irl"}
+                // onChange={handleChange}
+              />
+              <span>IRL</span>
+            </label>
+            <label className="flex items-center space-x-2">
+              <input
+                type="radio"
+                name="meetupType"
+                value="virtual"
+                className="form-radio"
+                // checked={formData.meetupType === "virtual"}
+                // onChange={handleChange}
+              />
+              <span>Virtual</span>
+            </label>
+          </div>
+        </div>
+
+        {/* Date and Time */}
         <div>
-          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="ticketPrice">
-            Ticket Price ($)*
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="meetupDate">
+            Date *
           </label>
           <input
-            type="number"
-            id="ticketPrice"
-            name="ticketPrice"
-            className="w-full rounded-full py-2 px-5"
-            min={0}
-            placeholder="Enter meetup ticket price"
-            // value={formData.ticketPrice}
+            type="date"
+            id="meetupDate"
+            name="meetupDate"
+            className="w-full rounded-full py-2 px-5 "
+            // value={formData.meetupDate}
+            // onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="meetupTime">
+            Time *
+          </label>
+          <input
+            type="time"
+            id="meetupTime"
+            name="meetupTime"
+            className="w-full rounded-full py-2 px-5 "
+            // value={formData.meetupTime}
             // onChange={handleChange}
           />
         </div>
 
-        {/* Number of Tickets */}
+        {/* Link for Virtual meetup */}
         <div>
-          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="numberOfTickets">
-            Number of Tickets *
+          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="meetupLink">
+            Meetup Link <span className=" underline font-medium text-[11px]">( IRL? add the google map link )</span> *
           </label>
           <input
-            type="number"
-            id="numberOfTickets"
-            name="numberOfTickets"
-            min={0}
-            className="w-full rounded-full py-2 px-5"
-            placeholder="Enter the number of tickets"
-            // value={formData.numberOfTickets}
-            // onChange={handleChange}
-          />
-        </div>
-
-        {/* Organizer Address */}
-        <div>
-          <label className="block opacity-45 text-sm font-medium mb-1" htmlFor="organizerAddress">
-            Organizer Address * <br />
-            <span className=" text-[12px] font-light text-yellow-900 dark:text-yellow-600">
-              ⚠️ Please ensure that the correct address is provided, as the ticket amount will be transferred directly
-              to the specified address.
-            </span>
-          </label>
-          <input
-            type="text"
-            id="organizerAddress"
-            name="organizerAddress"
-            className="w-full rounded-full py-2 px-5"
-            placeholder="Enter organizer's address"
-            // value={formData.organizerAddress}
+            type="url"
+            id="meetupLink"
+            name="meetupLink"
+            className="w-full rounded-full py-2 px-5 "
+            placeholder="Enter the meetup link"
+            // value={formData.meetupLink}
             // onChange={handleChange}
           />
         </div>
