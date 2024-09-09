@@ -1,12 +1,11 @@
 import type { NextPage } from "next";
+import AllMeetups from "~~/components/(HomePage)/AllMeetups";
 
 const Home: NextPage = () => {
   return (
-    <>
-      <div>
-        <p className=" md:text-4xl text-center font-bold">Event menia</p>
-      </div>
-    </>
+    <div>
+      <AllMeetups />
+    </div>
   );
 };
 

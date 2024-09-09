@@ -9,38 +9,6 @@ import ThirdStep from "./ThirdStep";
 const MeetupForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
 
-  // const [formData, setFormData] = useState({
-  //   eventTitle: "",
-  //   description: "",
-  //   coverImage: null as File | null,
-  //   eventType: "",
-  //   eventDate: "",
-  //   eventTime: "",
-  //   eventLink: "",
-  //   eventAddress: "",
-  //   ticketPrice: "",
-  //   numberOfTickets: "",
-  //   organizerAddress: "",
-  //   nftOrPoap: "",
-  //   additionalInstructions: "",
-  // });
-
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-  //   const { name, value } = e.target;
-  //   setFormData(prev => ({
-  //     ...prev,
-  //     [name]: value,
-  //   }));
-  // };
-
-  // const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   const file = e.target.files ? e.target.files[0] : null;
-  //   setFormData(prev => ({
-  //     ...prev,
-  //     coverImage: file,
-  //   }));
-  // };
-
   const goToNextStep = () => {
     if (currentStep < 4) setCurrentStep(currentStep + 1);
   };
