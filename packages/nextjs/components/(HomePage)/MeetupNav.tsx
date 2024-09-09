@@ -23,7 +23,7 @@ const MeetupNav = () => {
         <div
           className={` ${
             pathname == "/PreviousMeetups"
-              ? "border-white border-b-2 text-primary-content"
+              ? "dark:border-white border-neutral  border-b-2 text-primary-content"
               : "text-zinc-400 dark:text-gray-500"
           } `}
         >
