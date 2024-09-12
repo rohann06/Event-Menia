@@ -30,6 +30,16 @@ const MeetupNav = () => {
           <p className="mb-2">Previous Meetups</p>
         </div>
       </Link>
+      <div className=" md:mt-2">
+        <select
+          className=" outline-none font-medium bg-transparent  px-[20px] text-center py-1 rounded-[10px] "
+          name="meetType"
+        >
+          <option value="volvo">All</option>
+          <option value="saab">Virtual</option>
+          <option value="mercedes">IRL</option>
+        </select>
+      </div>
     </div>
   );
 };

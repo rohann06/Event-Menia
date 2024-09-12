@@ -27,9 +27,13 @@ const MeetUpCard = () => {
             <span>
               By <span className=" text-base font-medium"> Rohan</span>
             </span>
-            <span className=" cursor-pointer border p-[4px] rounded-full hover:bg-black hover:text-white hover:dark:bg-white hover:dark:text-black">
+            <a
+              href="https://x.com/rohann06_"
+              target="_blank"
+              className=" cursor-pointer border p-[4px] rounded-full hover:bg-black hover:text-white hover:dark:bg-white hover:dark:text-black"
+            >
               <FaXTwitter />
-            </span>
+            </a>
           </p>
         </div>
         <div className=" flex justify-between items-center gap-x-5 h-[45px] my-3">
