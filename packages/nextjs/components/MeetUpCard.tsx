@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { CiGlobe } from "react-icons/ci";
+import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { GrLocation } from "react-icons/gr";
 
@@ -22,43 +22,44 @@ const MeetUpCard = () => {
           />
         </div>
         <div>
-          <p className="font-bold md:text-[20px]">My first meetUp🥂</p>
-          <p className=" text-xs flex justify-between items-center gap-x-1 font-extralight">
+          <p className="font-bold md:text-[20px] mb-[5px]">My first meetUp🥂</p>
+          <p className=" text-xs flex items-center gap-x-3 font-extralight m-0 mb-3">
             <span>
               By <span className=" text-base font-medium"> Rohan</span>
             </span>
             <a
               href="https://x.com/rohann06_"
               target="_blank"
-              className=" cursor-pointer border p-[4px] rounded-full hover:bg-black hover:text-white hover:dark:bg-white hover:dark:text-black"
+              className=" cursor-pointer p-[4px] rounded-full hover:bg-black hover:text-white hover:dark:bg-white hover:dark:text-black"
             >
               <FaXTwitter />
             </a>
           </p>
         </div>
         <div className=" flex justify-between items-center gap-x-5 h-[45px] my-3">
-          <div className=" flex flex-col items-center">
-            <div className=" px-[15px] bg-red-600 text-white font-bold text-sm rounded-t-[7px]">Sep</div>
-            <div className=" py-1 px-[16px] border-t border-black bg-white text-black font-bold text-[20px] rounded-b-[7px]">
-              20
+          <div className=" flex items-center gap-x-3">
+            <div className=" flex flex-col items-center mt-[15px]">
+              <div className=" px-[15px] bg-red-600 text-white font-bold text-sm rounded-t-[7px]">Sep</div>
+              <div className=" py-1 px-[16px] border-t border-black bg-white text-black font-bold text-[20px] rounded-b-[7px]">
+                20
+              </div>
+            </div>
+            <div className=" flex flex-col text-sm ">
+              <p className=" flex items-center gap-x-1 opacity-50 mb-2">
+                <span>
+                  <GrLocation />
+                </span>
+                Bangalore
+              </p>
+              <div className=" max-w-[50px] bg-info text-neutral text-xs text-center py-1 rounded-[5px] font-semibold">
+                Virtual
+              </div>
             </div>
           </div>
-          <div className=" text-sm opacity-50">
-            <p className=" flex items-center gap-x-1">
-              <span>
-                <CiGlobe />
-              </span>
-              10:00am IST
-            </p>
-            <p className=" flex items-center gap-x-1">
-              <span>
-                <GrLocation />
-              </span>
-              Vadodra
-            </p>
-          </div>
           <div>
-            <div className=" bg-info text-xs px-3 py-1 rounded-[5px] font-bold">Virtual</div>
+            <div className="  rounded-[5px] mt-4 mr-5 text-[20px]">
+              <FaExternalLinkSquareAlt />
+            </div>
           </div>
         </div>
       </div>
