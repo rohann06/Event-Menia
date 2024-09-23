@@ -20,7 +20,11 @@ export const menuLinks: HeaderMenuLink[] = [
     href: "/",
   },
   {
-    label: "Create Meetup",
+    label: "Create Meetups",
+    href: "/createMeetup",
+  },
+  {
+    label: "My Meetups",
     href: "/createMeetup",
   },
   {

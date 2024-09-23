@@ -7,7 +7,11 @@ import { usePathname } from "next/navigation";
 const MeetupNav = () => {
   const pathname = usePathname();
   return (
-    <div className=" mx-6 flex items-center gap-x-10 font-bold text-sm">
+    <div
+      className={`mx-6 flex items-center justify-center mb-10 gap-x-10 font-bold text-sm ${
+        pathname !== "/" && "hidden"
+      }`}
+    >
       <Link href={"/"}>
         <div
           className={` ${
