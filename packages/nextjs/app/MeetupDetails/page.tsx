@@ -1,5 +1,8 @@
 import React from "react";
 import Image from "next/image";
+import { FaXTwitter } from "react-icons/fa6";
+import { IoLocationSharp } from "react-icons/io5";
+import MeetupGuestList from "~~/components/(MeetupsDetails)/MeetupGuestList";
 
 const MeetupDetails = () => {
   return (
@@ -38,19 +41,53 @@ const MeetupDetails = () => {
               className="h-full w-full bg-cover bg-center rounded-lg"
             />
           </div>
-          <div>
-            <div>
-              <div className=" flex flex-col  text-center w-[95px] mt-[15px]">
-                <div className=" py-[5px] bg-red-600 text-white font-bold text-[17px] rounded-t-[7px]">Sep</div>
-                <div className=" py-[5px] border-t border-black bg-white text-black font-bold text-[30px] rounded-b-[7px]">
+          <div className=" flex items-center justify-between mt-5">
+            <div className=" flex items-center gap-x-3">
+              <div className=" flex flex-col  text-center w-[70px] mt-[15px]">
+                <div className=" py-[2px] bg-red-600 text-white font-bold text-[15px] rounded-t-[7px]">Sep</div>
+                <div className=" py-[4px] border-t border-black bg-white text-black font-bold text-[25px] rounded-b-[7px]">
                   20
                 </div>
               </div>
+              <div>
+                <p className=" flex text-[14px] items-center gap-x-[1px] font-medium opacity-50 mb-2">
+                  <span className=" text-lg">
+                    <IoLocationSharp />
+                  </span>
+                  Vadodra
+                </p>
+                <div className=" flex items-center gap-x-[1px]">
+                  <p className=" m-0 font-extralight">📍</p>
+                  <a className=" m-0 underline" href="https://maps.app.goo.gl/5cCWqosCbHHWM1wVA" target="_blank">
+                    https://maps.app.goo.gl/5cCWqosCbHHWM1wVA
+                  </a>
+                </div>
+              </div>
             </div>
-            <div></div>
+            <div>
+              <button className=" bg-neutral text-neutral-content px-[25px] py-[10px] rounded-[5px] hover:scale-105 duration-100 font-medium text-[15px]">
+                Register
+              </button>
+            </div>
+          </div>
+
+          <div className=" mt-10">
+            {/* <div className=" border-[1px] opacity-40" /> */}
+            <p className=" text-sm opacity-60 mt-3 mb-5">Organised by:</p>
+            <div className=" flex items-center gap-x-5">
+              <p className=" m-0 text-lg">Rohan</p>
+              <a
+                href="https://x.com/rohann06_"
+                target="_blank"
+                className=" cursor-pointer text-[15px] p-[5px] rounded-[5px] bg-neutral text-neutral-content"
+              >
+                <FaXTwitter />
+              </a>
+            </div>
           </div>
         </div>
       </div>
+      <MeetupGuestList />
     </>
   );
 };
