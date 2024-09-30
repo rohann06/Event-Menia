@@ -35,7 +35,7 @@ const MeetUpCard = () => {
             <a
               href="https://x.com/rohann06_"
               target="_blank"
-              className=" cursor-pointer p-[4px] rounded-full dark:bg-white dark:text-black bg-black text-white"
+              className=" cursor-pointer text-[17px] p-[5px] rounded-full dark:bg-white dark:text-black bg-black text-white"
             >
               <FaXTwitter />
             </a>
